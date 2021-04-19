@@ -1,0 +1,110 @@
+<form [formGroup]="userForm" (ngSubmit)="onSubmit(userForm.value)" class="text-center border border-light p-5">
+    <h1> Registration: </h1>
+    <table class='table'>
+        <tr>
+            <td>
+                First Name:
+            </td>
+            <td><input type="text" formControlName="firstName" id="defaultRegisterFormFirstName" class="form-control">
+            </td>
+             <div *ngIf="userForm.controls['firstName'].invalid && userForm.controls['firstName'].touched" class="alert alert-danger">
+              Can only contain alphabet
+            </div>
+        </tr>
+        <tr>
+            <td>
+                Last Name:
+            </td>
+            <td><input type="text" formControlName="lastName" id="defaultRegisterFormLastName" class="form-control">
+            </td>
+            <div *ngIf="userForm.controls['lastName'].invalid && userForm.controls['lastName'].touched" class="alert alert-danger">
+                Can only contain alphabet
+              </div>
+        </tr>
+        <tr>
+            <td>
+                Date of Birth: </td>
+            <td><input type="date" formControlName="dob" id="defaultRegisterFormDob" class="form-control" [max] = "date">
+            </td>
+            
+        </tr>
+        <tr>
+            <td>
+                Email Address: </td>
+            <td><input type="email" formControlName="email" id="defaultRegisterFormEmail" class="form-control">
+            </td>
+            <div *ngIf="userForm.controls['email'].invalid && userForm.controls['email'].touched" class="alert alert-danger">
+                Invalid email
+              </div>
+        </tr>
+        <tr>
+            <td>
+                Address Line 1: </td>
+            <td><input type="text" formControlName="addressLine1" id="defaultRegisterFormAddressLine1"
+                    class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Address Line 2: </td>
+            <td><input type="text" formControlName="addressLine2" id="defaultRegisterFormAddressLine2"
+                    class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                City: </td>
+            <td><input type="text" formControlName="city" id="defaultRegisterFormCity" class="form-control">
+            </td>
+            <div *ngIf="userForm.controls['city'].invalid && userForm.controls['city'].touched" class="alert alert-danger">
+                Can only contain alphabet
+              </div>
+        </tr>
+        <tr>
+            <td>
+                State: </td>
+            <td><input type="text" formControlName="state" id="defaultRegisterFormState" class="form-control">
+            </td>
+            <div *ngIf="userForm.controls['state'].invalid && userForm.controls['state'].touched" class="alert alert-danger">
+                Can only contain alphabet
+              </div>
+        </tr>
+        <tr>
+            <td>
+                Country: </td>
+            <td><input type="text" formControlName="country" id="defaultRegisterFormCountry" class="form-control">
+            </td>
+            <div *ngIf="userForm.controls['country'].invalid && userForm.controls['country'].touched" class="alert alert-danger">
+                Can only contain alphabet
+              </div>
+        </tr>
+        <tr>
+            <td>
+                Zip Code: </td>
+            <td><input type="text" formControlName="zipCode" id="defaultRegisterFormZipCode" class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                User Name: </td>
+            <td><input type="text" formControlName="userName" id="defaultRegisterFormUserName" class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Password: </td>
+            <td><input type="password" formControlName="password" id="defaultRegisterFormPassword" class="form-control">
+            </td>
+        </tr>
+        <tr> 
+            <td>
+                <input type="submit" value="Register" class='btn btn-primary'>
+            </td>
+            <td></td>
+        </tr>
+    </table>
+    
+
+    <hr>
+
+</form>

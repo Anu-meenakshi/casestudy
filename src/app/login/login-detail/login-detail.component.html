@@ -1,0 +1,30 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)" class="text-center border border-light p-5">
+    <h1> Login: </h1>
+    <table class='table'>
+        <tr>
+            <td>
+                User Name: </td>
+            <td><input type="text" formControlName="userName" id="defaultLoginFormUserName" class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Password: </td>
+            <td><input type="password" formControlName="password" id="defaultLoginFormPassword" class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                
+                <input type="submit" value="Login" id="defaultLoginFormSubmit" class='btn btn-primary'>
+               
+            </td>
+            <td>
+                <a class='nav-link' routerLinkActive='active' [routerLink]="['/forgotpassword']">Forgot Password</a>
+            </td>
+        </tr>
+        
+    </table>
+    <hr>
+
+</form>
