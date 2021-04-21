@@ -10,7 +10,7 @@
       <tr *ngFor='let user of users'>
         <td>{{user.id}}</td>
         <td>{{user.firstName}}</td>
-        <td><a class='nav-link' routerLinkActive='active' [routerLink]="['/forgotpassword']">Edit</a></td>
+        <td><button value = "Edit "class='btn btn-primary'  (click)= 'edit(user)'>Edit</button></td>
         <td><button value = "View "class='btn btn-primary'  (click)= 'view(user)'>View</button></td>
         <td><button value = "Delete "class='btn btn-primary'  (click)= 'delete(user)'>Delete</button> </td>
       </tr>

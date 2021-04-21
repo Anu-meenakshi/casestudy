@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 import { IUsers } from 'src/app/users';
-import { ViewUserComponent } from 'src/app/view-user/view-user.component';
+import { ViewDetailComponent } from './view-detail/view-detail.component';
 
 
 @Component({
@@ -14,7 +14,7 @@ import { ViewUserComponent } from 'src/app/view-user/view-user.component';
 export class DashboardDetailComponent implements OnInit {
 
   users: IUsers[];
-  viewUser: ViewUserComponent;
+  viewUser: ViewDetailComponent;
   
   constructor(private api: ApiService, private router : Router) {  }
   ngOnInit(): void {
@@ -37,15 +37,10 @@ export class DashboardDetailComponent implements OnInit {
 
   view(data) {
     console.log(data.userName)
-    this.api.getUserByUserName(data.userName).subscribe(
-      (response) => {
-        let name = response.find(t=>t.userName === data.userName);
-        console.log("View: "+name.userName)
-        this.viewUser.getUserData(name.userName);
-      }
-      
-    );
-    
+    this.router.navigate(['/', 'viewUser', data.userName]);
   }
-  
+  edit(data) {
+    console.log(data.userName)
+    this.router.navigate(['/', 'editUser', data.userName]);
+  }
 }

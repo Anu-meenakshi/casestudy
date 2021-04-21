@@ -37,6 +37,29 @@ export class ApiService {
     users.password = data.password;
     return this.http.put(API_URL + '/users/' + id, users)
   }
+  public updateUser(users: IUsers, id: number, data: any) {
+    if(data.firstName != null) 
+      users.firstName = data.firstName
+      if(data.lastName != null) 
+      users.lastName = data.lastName
+      if(data.dob != null) 
+      users.dob = data.dob
+      if(data.email != null) 
+      users.email = data.email
+      if(data.addressLine1 != null) 
+      users.addressLine1 = data.addressLine1
+      if(data.addressLine2 != null) 
+      users.addressLine2 = data.addressLine2
+      if(data.city != null) 
+      users.city = data.city
+      if(data.country != null) 
+      users.country = data.country
+      if(data.state != null) 
+      users.state = data.state
+      if(data.zipCode != null) 
+      users.zipCode = data.zipCode
+    return this.http.put(API_URL + '/users/' + users.id, users)
+  }
 
   public deleteId (id:number) {
     return this.http.delete(API_URL + '/users/' + id)

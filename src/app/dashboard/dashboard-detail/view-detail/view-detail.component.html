@@ -1,1 +1,41 @@
-<p>view-detail works!</p>
+<div class='table-responsive'>
+    <table class='table'>
+        <thead class='thead'>
+            <tr>
+                <th> ID </th>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>DOB</th>
+                <th>email</th>
+                <th>Address Line 1</th>
+                <th>Address Line 2</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Country</th>
+                <th>Zip Code</th>
+                <th>User Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let user of users'>
+                <td>{{user.id}}</td>
+                <td>{{user.firstName}}</td>
+                <td>{{user.lastName}}</td>
+                <td>{{user.dob}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.addressLine1}}</td>
+                <td>{{user.addressLine2}}</td>
+                <td>{{user.city}}</td>
+                <td>{{user.state}}</td>
+                <td>{{user.country}}</td>
+                <td>{{user.zipCode}}</td>
+                <td>{{user.userName}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div>
+    <button value="Back to Dashboard " class='btn btn-primary' (click)='backToDashboard()'>
+        Back to Dashboard
+    </button>
+</div>

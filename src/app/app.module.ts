@@ -11,6 +11,7 @@ import { ForgotPasswordComponent } from './login/forgot-password/forgot-password
 import { DashboardDetailComponent } from './dashboard/dashboard-detail/dashboard-detail.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ViewDetailComponent } from './dashboard/dashboard-detail/view-detail/view-detail.component';
+import { EditDetailComponent } from './dashboard/dashboard-detail/edit-detail/edit-detail.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ViewDetailComponent } from './dashboard/dashboard-detail/view-detail/vi
     LoginDetailComponent,
     ForgotPasswordComponent,
     DashboardDetailComponent,
-    ViewDetailComponent
+    ViewDetailComponent,
+    EditDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -31,6 +33,8 @@ import { ViewDetailComponent } from './dashboard/dashboard-detail/view-detail/vi
       { path: 'login', component: LoginDetailComponent },
       { path: 'forgotpassword', component: ForgotPasswordComponent },
       { path: 'dashboard', component: DashboardDetailComponent },
+      { path: 'viewUser/:id', component: ViewDetailComponent },
+      { path: 'editUser/:id', component: EditDetailComponent },
       { path: '**', redirectTo: 'login', pathMatch: 'full' }
     ])
   ],
