@@ -1,48 +1,88 @@
 <div class='table-responsive'>
+    <form  [formGroup]="editForm" (ngSubmit)="onSubmit(editForm.value)" class="text-center border border-light p-5">
     <table class='table'>
-        <thead class='thead'>
-            <tr>
-                <th> ID </th>
-                <th>First name</th>
-                <th>Last name</th>
-                <th>DOB</th>
-                <th>email</th>
-                <th>Address Line 1</th>
-                <th>Address Line 2</th>
-                <th>City</th>
-                <th>State</th>
-                <th>Country</th>
-                <th>Zip Code</th>
-                <th>User Name</th>
-            </tr>
-        </thead>
+        
         <tbody>
-            <tr *ngFor='let user of users'>
-                <td id='userID'>{{user.id}}</td>
-                <td contenteditable='true' id='firstName'>{{user.firstName}}</td>
-                <td contenteditable='true' id='lastName'>{{user.lastName}}</td>
-                <td contenteditable='true' id='dob'>{{user.dob}}</td>
-                <td contenteditable='true' id='email'>{{user.email}}</td>
-                <td contenteditable='true' id='addressLine1'>{{user.addressLine1}}</td>
-                <td contenteditable='true' id='addressLine2'>{{user.addressLine2}}</td>
-                <td contenteditable='true' id='city'>{{user.city}}</td>
-                <td contenteditable='true' id='state'>{{user.state}}</td>
-                <td contenteditable='true' id='country'>{{user.country}}</td>
-                <td contenteditable='true' id='zipCode'>{{user.zipCode}}</td>
-                <td id='userName'>{{user.userName}}</td>
-            </tr>
            
+                           <tr>
+            <td>First Name:</td>
+            <td><input type="text" formControlName="firstName" class="form-control" placeholder="user.firstName"></td>
+        </tr>
+        <tr>
+            <td>
+                Last Name:
+            </td>
+            <td><input type="text" formControlName="lastName" class="form-control" placeholder="user.lastName">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Date of Birth: </td>
+            <td><input type="date" formControlName="dob" class="form-control" placeholder="user.dob">
+            </td>
+            
+        </tr>
+        <tr>
+            <td>
+                Email Address: </td>
+            <td><input type="email" formControlName="email" class="form-control" placeholder="user.dob">
+            </td>
+            
+        </tr>
+        <tr>
+            <td>
+                Address Line 1: </td>
+            <td><input type="text" formControlName="addressLine1" class="form-control" placeholder="user.addressLine1">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Address Line 2: </td>
+            <td><input type="text" formControlName="addressLine2" class="form-control" placeholder="user.addressLine2">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                City: </td>
+            <td><input type="text" formControlName="city" class="form-control" placeholder="user.city">
+            </td>
+    
+        </tr>
+        <tr>
+            <td>
+                State: </td>
+            <td><input type="text" formControlName="state" class="form-control" placeholder="user.state">
+            </td>
+            
+        </tr>
+        <tr>
+            <td>
+                Country: </td>
+            <td><input type="text" formControlName="country" class="form-control" placeholder="user.country">
+            </td>
+            
+        </tr>
+        <tr>
+            <td>
+                Zip Code: </td>
+            <td><input type="text" formControlName="zipCode" class="form-control" placeholder="user.zipCode">
+            </td>
+        </tr>
+        
         </tbody>
     </table>
     <table>
         <tr>
             <td>
-                <input type="submit" value="Save Changes" class='btn btn-primary' (click)='saveChanges(users)'>
-</td> <td> </td><td>
+                <input type="submit" value="Save Changes" class='btn btn-primary'>
+                
+</td>   <td>
     <button value="Back to Dashboard " class='btn btn-primary' (click)='backToDashboard()'>
         Back to Dashboard
-    </button></td>
+    </button>
+</td>
+
 </tr>
 </table>
-
+</form>
 </div>
